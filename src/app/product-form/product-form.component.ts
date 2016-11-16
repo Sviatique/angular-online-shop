@@ -12,7 +12,6 @@ import {FormGroup, FormControl, FormBuilder} from "@angular/forms";
 
 export class ProductFormComponent implements OnInit{
   private productForm: FormGroup;
-
   private formValues = {
     category: '',
     title: '',
@@ -22,17 +21,17 @@ export class ProductFormComponent implements OnInit{
     description: '',
     details: ''
   };
+
   @Input()  private product: Product;
   @Output() private submitForm = new EventEmitter<Product>();
+
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute,
     public dialogService: DialogService,
     private formBuilder: FormBuilder) {}
 
-
-  ngOnInit() : void {
-    console.log(this.submitForm)
+  public ngOnInit() : void {
     if(this.product) {
       this.formValues = {
         category: this.product.category,

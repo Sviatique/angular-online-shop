@@ -1,7 +1,23 @@
 <button (click)="create()">Create product</button>
-<ul>
-  <li *ngFor="let product of products">
-    {{product.title}}
-    <button (click)="edit(product)">Edit</button>
-  </li>
-</ul>
+<div>
+  <div class="row" *ngFor="let product of products">
+    <div class="col-xs-2">
+      {{product.category}}
+    </div>
+    <div class="col-xs-2">
+      {{product.title}}
+    </div>
+    <div class="col-xs-2">
+      {{product.brand}}
+    </div>
+    <div class="col-xs-2">
+      {{product._id | date: 'dd MMM yyyy'}}
+    </div>
+    <div class="col-xs-1">
+      <button (click)="edit(product)">Edit</button>
+    </div>
+    <div class="col-xs-1">
+      <button (click)="delete(product)">Delete</button>
+    </div>
+  </div>
+</div>

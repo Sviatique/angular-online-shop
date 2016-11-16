@@ -1,6 +1,3 @@
-/**
- * Created by s.kharchevnyi on 11/11/2016.
- */
 import {Component, OnInit} from '@angular/core';
 import {ProductsService} from "../share/products.service";
 import {Product} from "../product/product";
@@ -10,12 +7,12 @@ import {Product} from "../product/product";
   templateUrl: './cart.component.html',
 })
 export class CartComponent implements OnInit{
-  products: Product[] = [];
+  private products: Array<Product> = [];
 
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit() : void {
+  public ngOnInit() : void {
     this.productsService.getCartProducts()
-      .then(products => this.products = products);
+      .subscribe(products => this.products = products.data);
   }
 }

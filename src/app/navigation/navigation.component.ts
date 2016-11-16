@@ -11,12 +11,15 @@ import {ProductsService} from "../share/products.service";
 })
 
 export class NavigationComponent implements OnInit{
-  constructor(private productsService : ProductsService) {}
-  numberOfProducts : Number;
+  private numberOfProducts : Number;
 
-  ngOnInit() : void{
+  constructor(private productsService : ProductsService) {}
+
+  public ngOnInit() : void{
     this.productsService.getCartProducts()
-      .then(products => this.numberOfProducts = products.length)
-      .catch(error => console.log('Something went wrong - ', error));
+      .subscribe(
+        products => this.numberOfProducts = products.data.length,
+        error => console.log('Error!', error)
+      );
   }
 }

@@ -31,7 +31,6 @@ export class ProductEditComponent implements OnInit{
   }
 
   private updateProduct(product: Product) {
-    console.log('update product')
     this.productsService.updateProduct(product)
       .subscribe(response => {
         console.log(response);

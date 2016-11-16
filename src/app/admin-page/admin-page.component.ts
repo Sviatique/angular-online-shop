@@ -13,20 +13,26 @@ import {Router} from "@angular/router";
 })
 export class AdminPageComponent implements OnInit{
   products : Array<Product>;
+
   constructor(
     private productsService: ProductsService,
     private router: Router) {}
 
-  ngOnInit() : void {
+  public ngOnInit() : void {
     this.productsService.getProducts()
       .subscribe(products => this.products = products.data);
   }
 
-  edit(product: Product) : void {
+  private edit(product: Product) : void {
     this.router.navigate(['/admin/edit', product._id]);
   }
 
-  create() : void {
+  private create() : void {
     this.router.navigate(['/admin/create']);
+  }
+
+  private delete(product: Product): void {
+    this.productsService.deleteProduct(product)
+      .subscribe(response => console.log(response));
   }
 }

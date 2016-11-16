@@ -14,9 +14,10 @@ import {ProductsService} from "../share/products.service";
 })
 export class CatalogComponent implements OnInit{
   private products: Array<Product>;
+
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.productsService.getProducts()
       .subscribe(response => {
         if(response.success){
