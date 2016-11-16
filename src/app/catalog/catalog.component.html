@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div>
+  <div *ngFor="let product of products" class="product-card">
+    <div>
+      <div class="product-price">
+        <label>Price: </label>
+        {{product.price | currency}}
+      </div>
+      <div class="col-xs-6">
+
+        <div class="row">
+          <label class="col-xs-2">Category</label>{{product.category}}
+        </div>
+        <div class="row">
+          <label class="col-xs-2">Title</label>{{product.title}}
+        </div>
+        <div class="row">
+          <label class="col-xs-2">Brand</label>{{product.brand}}
+        </div>
+        <div class="row">
+          <label class="col-xs-2">Date of creation</label>{{product._id | date:'dd MMM yy'}}
+        </div>
+
+      </div>
+
+      <div class="">
+        Image: {{product.image}}
+      </div>
+
+    </div>
+    <div>
+      <div class="product-description col-xs-5">
+        <div class="">
+          <label>Description: </label>
+        </div>
+        <div class="">{{product.description || 'Product hasn\'t description yet'}}</div>
+      </div>
+      <div class="product-card-actions">
+        <button class="">Add to cart</button>
+        <button class="">Open preview</button>
+      </div>
+    </div>
+  </div>
+</div>

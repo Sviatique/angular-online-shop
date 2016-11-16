@@ -1,0 +1,21 @@
+.product-card {
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid black;
+  background-color: #DDE4E4;
+  min-height: 220px;
+}
+
+.product-price {
+  float: right;
+}
+
+.product-description {
+  clear: both;
+  word-wrap: break-word;
+}
+
+.product-card-actions {
+  float: right;
+  clear: both;
+}

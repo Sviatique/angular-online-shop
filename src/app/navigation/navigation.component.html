@@ -1,0 +1,6 @@
+<nav>
+  <a class="navigation-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a class="navigation-link" [routerLink]="['/catalog']" routerLinkActive="active">Catalog</a>
+  <a class="navigation-link" [routerLink]="['/cart']" routerLinkActive="active">Cart ({{numberOfProducts}})</a>
+  <a class="navigation-link" [routerLink]="['/admin']" routerLinkActive="active">Admin</a>
+</nav>

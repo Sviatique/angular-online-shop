@@ -4,9 +4,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './catalog.component.html',
+  selector: 'home',
+  templateUrl: './home.component.html',
 })
-export class CatalogComponent {
+export class HomeComponent {
 
 }

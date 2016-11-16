@@ -1,0 +1,14 @@
+.navigation-link.active {
+  background-color: #4C9999;
+
+}
+
+.navigation-link {
+  color: white;
+  text-align: center;
+  padding: 15px;
+  display: inline-block;
+  width: 100px;
+  background-color: #8dd1d1;
+  text-decoration: none;
+}

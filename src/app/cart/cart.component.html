@@ -1,0 +1,13 @@
+<div>
+
+  <ul>
+    <div *ngIf="!products.length">Your cart is empty!</div>
+    <li *ngFor="let product of products">
+      <div>{{product.category}}</div>
+      <div>{{product.title}}</div>
+      <div>{{product.brand}}</div>
+      <div>{{product.image}}</div>
+      <div>{{product.quantity}}</div>
+    </li>
+  </ul>
+</div>

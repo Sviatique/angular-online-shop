@@ -1,0 +1,7 @@
+<button (click)="create()">Create product</button>
+<ul>
+  <li *ngFor="let product of products">
+    {{product.title}}
+    <button (click)="edit(product)">Edit</button>
+  </li>
+</ul>
