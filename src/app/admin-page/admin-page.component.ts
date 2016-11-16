@@ -10,8 +10,11 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'admin-page',
   templateUrl: './admin-page.component.html',
+  styleUrls: [
+    './admin-page.component.css'
+  ]
 })
-export class AdminPageComponent implements OnInit{
+export class AdminPageComponent implements OnInit {
   products : Array<Product>;
 
   constructor(
@@ -33,6 +36,17 @@ export class AdminPageComponent implements OnInit{
 
   private delete(product: Product): void {
     this.productsService.deleteProduct(product)
-      .subscribe(response => console.log(response));
+      .subscribe(response => {
+        if(response.success) {
+          this.products.forEach((item, index) => {
+            console.log(product)
+            console.log(item)
+            if(product._id === item._id) {
+              console.log('found')
+              this.products.splice(index, 1);
+            }
+          });
+        }
+      });
   }
 }

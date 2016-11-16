@@ -32,23 +32,23 @@ export class ProductsService implements IProductsService{
   }
 
   public getCartProducts() : Observable<IApiResponse<Product>> {
-    return this.getProducts();
+    return <Observable<IApiResponse<Product>>> this.getProducts();
   }
 
   public getProduct(id : number) : Observable<IApiResponse<Product>> {
     return <Observable<IApiResponse<Product>>> this.makeRequest(null, 'get', `${this.baseUrl}/${id}`);
   }
 
-  public createProduct(product) : Observable<Response> {
-    return this.makeRequest(product, 'post', this.baseUrl);
+  public createProduct(product) : Observable<IApiResponse<Product>> {
+    return <Observable<IApiResponse<Product>>> this.makeRequest(product, 'post', this.baseUrl);
   }
 
-  public updateProduct(product) : Observable<Response> {
-    return this.makeRequest(product, 'put', this.baseUrl + '/' + product._id);
+  public updateProduct(product) : Observable<IApiResponse<Product>> {
+    return <Observable<IApiResponse<Product>>> this.makeRequest(product, 'put', this.baseUrl + '/' + product._id);
   }
 
-  public deleteProduct(product: Product): Observable<Response> {
-    return this.makeRequest({}, 'DELETE', this.baseUrl + '/' + product._id);
+  public deleteProduct(product: Product): Observable<IApiResponse<Product>> {
+    return <Observable<IApiResponse<Product>>> this.makeRequest({}, 'DELETE', this.baseUrl + '/' + product._id);
   }
 
   private makeRequest(body: Object, method: string, url: string) : Observable<Response> {

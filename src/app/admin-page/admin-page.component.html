@@ -1,5 +1,11 @@
-<button (click)="create()">Create product</button>
-<div>
+<div class="admin-page">
+  <button (click)="create()">Create product</button>
+  <div class="row">
+    <label class="col-xs-2">Category</label>
+    <label class="col-xs-2">Title</label>
+    <label class="col-xs-2">Brand</label>
+    <label class="col-xs-2">Creation date</label>
+  </div>
   <div class="row" *ngFor="let product of products">
     <div class="col-xs-2">
       {{product.category}}

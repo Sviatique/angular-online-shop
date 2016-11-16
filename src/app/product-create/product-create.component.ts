@@ -12,25 +12,21 @@ import {Component} from "@angular/core";
   selector: 'product-create',
   templateUrl: './product-create.component.html'
 })
-export class ProductCreateComponent implements OnInit{
+export class ProductCreateComponent{
   private product : Product = new Product();
 
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute
-  ) {
-
-  }
-
-  ngOnInit() : void {
-  }
+  ) {}
 
   private createProduct(product: Product) : void {
     this.productsService
       .createProduct(product)
       .subscribe(response => {
-        console.log(response)
+        if(response.success) {
+          alert('Product was successfully created');
+        }
       })
-
   }
 }

@@ -2,3 +2,17 @@
 body {
   font-family: Arial, sans-serif;
 }
+
+button {
+  outline: none;
+  border: none;
+  background-color: #7bb5b5;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  margin-bottom: 10px;
+
+}
+
+button:hover {
+  background-color: #4c9999;
+}
